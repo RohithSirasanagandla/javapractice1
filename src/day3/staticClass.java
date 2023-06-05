@@ -8,7 +8,6 @@ public class staticClass {
     }
 
     static int initializeStaticVariable() {
-        // Perform some computation or logic to initialize the static variable
         return 42;
     }
 

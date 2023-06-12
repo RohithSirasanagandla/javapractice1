@@ -1,20 +1,23 @@
 package day8;
+    public class StringReverse {
+        public static void main(String[] args) {
+            String sentence = "Java J2EE Reverse Me";
+            String reversedSentence = reverseWords(sentence);
 
-public class StringReverse {
-    public static void main (String args[]) {
-        String input="Java J2EE Reverse Me";
-        String[] words=input.split(" ");
-        String revWords="";
-
-        for(int i=0;i<words.length;i++) {
-            String word = words[i];
-            String revword="";
-            for(int j=word.length()-1;j>=0;j--) {
-                revword=revword+word.charAt(j);
-            }
-            revWords=revWords+revword;
+            System.out.println("Original sentence: " + sentence);
+            System.out.println("Reversed sentence: " + reversedSentence);
         }
-        System.out.println(revWords);
 
+        public static String reverseWords(String sentence) {
+            String[] words = sentence.split(" ");
+            StringBuilder reversedSentence = new StringBuilder();
+
+            for (String word : words) {
+                StringBuilder reversedWord = new StringBuilder(word);
+                reversedWord.reverse();
+                reversedSentence.append(reversedWord).append(" ");
+            }
+
+            return reversedSentence.toString().trim();
+        }
     }
-}
